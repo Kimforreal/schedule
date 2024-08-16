@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일정 관리 웹 애플리케이션</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="mode-selection">
+        <button id="view-mode">보기 모드</button>
+        <button id="edit-mode">편집 모드</button>
+    </div>
+    
+    <div id="password-dialog" class="hidden">
+        <input type="password" id="password-input" placeholder="비밀번호 입력">
+        <button id="password-submit">확인</button>
+    </div>
+
+    <div id="calendar">
+        <!-- 2주 일정이 표시될 영역 -->
+    </div>
+    
+    <div id="event-dialog" class="hidden">
+        <input type="text" id="event-input" placeholder="일정 입력">
+        <button id="save-event">저장</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
