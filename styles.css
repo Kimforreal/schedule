@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#mode-selection {
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}
+
+#calendar {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.day {
+    width: 14%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin: 5px;
+    position: relative;
+}
+
+.day .date {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.day .events {
+    margin-top: 10px;
+}
+
+.event {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e0e0e0;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.event .remove-btn {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: red;
+}
+
+#event-dialog, #password-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
