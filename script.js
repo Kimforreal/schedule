@@ -11,8 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     
     let currentMode = 'view'; // 'view' or 'edit'
     let currentDate;
+    let calendarInitialized = false; // Flag to check if calendar is initialized
 
     function initializeCalendar() {
+        if (calendarInitialized) return; // Prevent reinitialization
+
         const today = new Date();
         currentDate = new Date(today.setDate(today.getDate() - today.getDay())); // Get start of the week
         
@@ -22,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const dayElement = document.createElement('div');
             dayElement.className = 'day';
+            dayElement.id = `day-${i}`; // Set unique ID for each day
             dayElement.innerHTML = `
                 <div class="date">${date.toLocaleDateString()}</div>
                 <div class="events" id="events-${i}"></div>
@@ -29,6 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
             calendar.appendChild(dayElement);
         }
+
+        calendarInitialized = true; // Set the flag to true after initialization
     }
 
     function showPasswordDialog() {
@@ -74,6 +80,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     viewModeButton.addEventListener('click', () => {
         currentMode = 'view';
+        calendar.innerHTML = ''; // Clear existing calendar
+        calendarInitialized = false; // Reset initialization flag
         initializeCalendar();
     });
 
