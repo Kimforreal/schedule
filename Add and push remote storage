@@ -1,0 +1,3 @@
+git remote add origin <https://git.schedule-app.org/code/git>
+git branch -M main
+git push -u origin main
